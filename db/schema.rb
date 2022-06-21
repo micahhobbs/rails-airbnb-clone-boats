@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2022_06_18_054435) do
 
   create_table "boats", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "category"
     t.text "description"
     t.decimal "price"
     t.bigint "user_id", null: false
