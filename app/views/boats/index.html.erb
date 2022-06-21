@@ -1,5 +1,8 @@
 <div class="container">
-  <h1>Browse boats</h1>
+  <div class="d-flex justify-content-between pt-5">
+    <h1>Browse boats</h1>
+    <%= link_to "Add a new boat", new_boat_path, class: "btn btn-primary" %>
+  </div>
   <hr>
   <div class="cards">
     <% @boats.each do |boat| %>
