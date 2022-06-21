@@ -7,7 +7,7 @@
         <%# <%= image_tag("boat") %>
         <div class="card-product-infos">
           <h2><%= booking.boat.name %></h2>
-          <p>Booked By: <%= booking.user %></p>
+          <p>Booked By: <%= booking.user.email %></p>
           <p>Start Date <%= booking.start_date %></p>
           <p>End Date <%= booking.end_date %></p>
         </div>
