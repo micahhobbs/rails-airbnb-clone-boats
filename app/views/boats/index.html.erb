@@ -1,1 +1,16 @@
-<h2>Index for boats</h2>
+<div class="container">
+  <h1>Browse boats</h1>
+  <hr>
+  <div class="cards">
+    <% @boats.each do |boat| %>
+      <div class="card-product">
+        <%= image_tag("boat") %>
+        <div class="card-product-infos">
+          <h2><%= boat.name %></h2>
+          <p><%= boat.description %></p>
+          <p><%= boat.price %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
