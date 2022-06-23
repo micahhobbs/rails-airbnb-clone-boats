@@ -1,3 +1,6 @@
+require 'date'
+
+
 class BookingsController < ApplicationController
   def my_bookings
     @my_bookings = Booking.all.select { |booking| booking.user_id == current_user.id }
@@ -15,9 +18,12 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user_id = current_user.id
-    @booking.boat = Boat.find(params[:boat_id])
+    @booking.boat_id = params[:boat_id]
+    @booking.start_date = Date.parse booking_params[:start_date]
+    @booking.end_date = Date.parse booking_params[:end_date]
+    @booking.status = "Pending"
     if @booking.save
-      redirect_to bookings_my_bookings
+      redirect_to my_bookings_path
     else
       redirect_to boats_path
     end

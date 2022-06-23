@@ -9,7 +9,7 @@
       <div class="card-product">
         <%= image_tag("boat.jpg") %>
         <div class="card-product-infos">
-          <h2><%= boat.name %></h2>
+          <%= link_to boat.name, boat_path(boat.id)%>
           <p><%= boat.description %></p>
           <p><%= boat.price %></p>
         </div>

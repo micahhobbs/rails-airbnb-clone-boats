@@ -12,6 +12,9 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
+            <%= link_to "Browse", boats_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
             <%= link_to "Bookings", my_bookings_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
