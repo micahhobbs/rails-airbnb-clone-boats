@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Bookings On My Boats</h1>
+  <hr>
+  <div class="cards">
+    <% @my_bookings.each do |booking| %>
+      <div class="card-product">
+        <%# <%= image_tag("boat") %>
+        <div class="card-product-infos">
+          <h2><%= booking.boat.name %></h2>
+          <p>Start Date <%= booking.start_date %></p>
+          <p>End Date <%= booking.end_date %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
