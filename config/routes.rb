@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   resources :boats do
     resources :bookings, only: [:new, :create]
   end
+  get '/bookings/my_bookings', to: 'bookings#my_bookings'
+  get '/bookings/bookings_on_my_boats', to: 'bookings#bookings_on_my_boats'
 end
+

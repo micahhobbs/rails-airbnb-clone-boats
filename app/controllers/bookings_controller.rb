@@ -1,8 +1,13 @@
-<<<<<<< HEAD
 class BookingsController < ApplicationController
-end
-=======
-class BookingsController < ApplicationController
+  def my_bookings
+    @my_bookings = Booking.all.select { |booking| booking.user_id == current_user.id }
+  end
+
+  def bookings_on_my_boats
+    my_boat_ids = current_user.boats.map {|boat| boat.id }
+    @bookings_on_my_boats = Booking.all.select { |booking| my_boat_ids.include? booking.boat_id }
+  end
+
   def new
     @booking = Booking.new
   end
@@ -19,4 +24,3 @@ class BookingsController < ApplicationController
     params[:booking].permit(:start_date, :end_date)
   end
 end
->>>>>>> 0a0c97ed4f98e7320c0f300ed09eddcafc92c93b
