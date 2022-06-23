@@ -1,14 +1,13 @@
-<div>
+<div class="container pt-4">
 <h1><%= @boat.name %></h1>
 <div><p>Image</p></div>
 <div>
-<h3>Boat hosted by <%= current_user.email %></h3>
+<h3>Boat hosted by <%= @boat.user.email %></h3>
 <p><strong>Type: <%= @boat.category %></strong></p>
 <p><%= @boat.description %></p>
 </div>
 </div>
-<div>
-
+<div class="container pt-4">
 <%= simple_form_for [@boat, @booking] do |f| %>
   <p><strong><%= @boat.price %></strong></p>
   <%= f.label "CHECK-IN" %>
