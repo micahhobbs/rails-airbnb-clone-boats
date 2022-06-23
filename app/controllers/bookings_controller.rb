@@ -7,4 +7,5 @@ class BookingsController < ApplicationController
     my_boat_ids = current_user.boats.map {|boat| boat.id }
     @bookings_on_my_boats = Booking.all.select { |booking| my_boat_ids.include? booking.boat_id }
   end
+
 end
