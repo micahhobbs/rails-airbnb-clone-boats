@@ -1,5 +1,12 @@
 <div class="container">
-  <h1>Bookings On My Boats</h1>
+  <ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link" href="/bookings/my_bookings">My Bookings</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Bookings On My Boats</a>
+  </li>
+</ul>
   <hr>
   <div class="cards">
     <% @bookings_on_my_boats.each do |booking| %>
