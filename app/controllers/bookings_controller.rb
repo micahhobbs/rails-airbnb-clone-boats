@@ -8,4 +8,7 @@ class BookingsController < ApplicationController
     @bookings_on_my_boats = Booking.all.select { |booking| my_boat_ids.include? booking.boat_id }
   end
 
+  def new
+    @booking = Booking.new
+  end
 end
