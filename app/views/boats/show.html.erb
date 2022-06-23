@@ -2,11 +2,19 @@
 <h1><%= @boat.name %></h1>
 <div><p>Image</p></div>
 <div>
-<h3>Boat hosted by <%= @user %></h3>
+<h3>Boat hosted by <%= current_user.email %></h3>
 <p><strong>Type: <%= @boat.category %></strong></p>
 <p><%= @boat.description %></p>
 </div>
 </div>
 <div>
-<p><strong><%= @boat.price %></strong></p>
+
+<%= simple_form_for [@boat, @booking] do |f| %>
+  <p><strong><%= @boat.price %></strong></p>
+  <%= f.label "CHECK-IN" %>
+  <%= f.input :start_date, as: :date, required: false, input_html: {class: 'datepicker'} %>
+  <%= f.label "CHECKOUT" %>
+  <%= f.input :end_date, as: :date, required: false, input_html: {class: 'datepicker'}  %>
+  <%= f.submit "Reserve", class: "btn btn-danger form-control"%>
+<% end %>
 </div>
