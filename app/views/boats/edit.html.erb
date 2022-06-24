@@ -1,0 +1,10 @@
+<div class="container pt-4">
+  <h2>Edit boat</h2>
+  <%= simple_form_for(@boat) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :category %>
+    <%= f.input :price %>
+    <%= f.submit class: "btn btn-primary"%>
+  <% end %>
+</div>

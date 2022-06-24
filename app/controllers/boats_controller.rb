@@ -22,6 +22,19 @@ class BoatsController < ApplicationController
     end
   end
 
+  def edit
+    @boat = Boat.find(params[:id])
+  end
+
+  def update
+    @boat = Boat.find(params[:id])
+    if @boat.update(boat_params)
+      redirect_to my_boats_path
+    else
+      render :edit
+    end
+  end
+
   def my_boats
     @boats = current_user.boats
   end
