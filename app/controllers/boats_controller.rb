@@ -22,6 +22,10 @@ class BoatsController < ApplicationController
     end
   end
 
+  def my_boats
+    @boats = current_user.boats
+  end
+
   private
 
   def boat_params

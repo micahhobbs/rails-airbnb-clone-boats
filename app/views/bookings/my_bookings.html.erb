@@ -1,12 +1,5 @@
 <div class="container">
-  <ul class="nav nav-pills">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#">My Bookings</a>
-  </li>
-  <li class="nav-item">
-    <%= link_to "Bookings On My Boats", bookings_on_my_boats_path, class: "nav-link" %>
-  </li>
-</ul>
+    <%= render partial: 'shared/tabbar', :locals => {my_boats: "", my_bookings: "active", bookings_on_my_boats: ""} %>
   <hr>
   <div class="cards">
     <% @my_bookings.each do |booking| %>
