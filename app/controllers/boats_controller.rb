@@ -34,6 +34,11 @@ class BoatsController < ApplicationController
       render :edit
     end
   end
+    
+  def my_boats
+    @boats = current_user.boats
+
+  end
 
   private
 
