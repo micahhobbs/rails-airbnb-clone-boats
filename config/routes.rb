@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :boats
   get '/my_bookings', to: 'bookings#my_bookings', as: 'my_bookings'
   get '/bookings_on_my_boats', to: 'bookings#bookings_on_my_boats', as: 'bookings_on_my_boats'
+  get '/my_boats', to: 'boats#my_boats', as: 'my_boats'
   resources :boats do
     resources :bookings, only: [:new, :create]
   end

@@ -40,6 +40,10 @@ class BoatsController < ApplicationController
     @boat.destroy
     redirect_to boats_path
   end
+  
+  def my_boats
+    @boats = current_user.boats
+  end
 
   private
 
