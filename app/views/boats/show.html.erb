@@ -1,4 +1,9 @@
 <div class="container pt-4">
+<% if @boat.user_id == current_user.id %>
+  <div>
+    <%= link_to 'Edit', edit_boat_path(@boat), class: "btn btn-warning" %>
+  </div>
+<% end %>
 <h1><%= @boat.name %></h1>
 <div><p>Image</p></div>
 <div>
