@@ -10,14 +10,17 @@
   <hr>
   <div class="cards">
     <% @boats.each do |boat| %>
-      <div class="card-product">
-        <%= image_tag("boat.jpg") %>
-        <div class="card-product-infos">
-          <%= link_to boat.name, boat_path(boat.id)%>
-          <p><%= boat.description %></p>
-          <p><%= boat.price %></p>
+        <div class="card-product">
+          <%= image_tag("boat.jpg") %>
+          <div class="card-product-infos">
+            <h2><%= boat.name %></h2>
+            <p><%= boat.description %></p>
+            <div class="d-flex justify-content-between pt-3">
+              <p>$<%= boat.price %></p>
+              <%= link_to "Details", boat_path(boat), class: "btn btn-outline-primary" %>
+            </div>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
   </div>
 </div>
