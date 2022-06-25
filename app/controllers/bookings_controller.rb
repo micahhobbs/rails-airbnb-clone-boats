@@ -29,6 +29,27 @@ class BookingsController < ApplicationController
     end
   end
 
+  def approve
+    @booking = Booking.find(params[:booking_id])
+    @booking.status = "Approved"
+    @booking.save!
+    redirect_back fallback_location: root_path
+  end
+
+  def reject
+    @booking = Booking.find(params[:booking_id])
+    @booking.status = "Rejected"
+    @booking.save!
+    redirect_back fallback_location: root_path
+  end
+
+  def cancel
+    @booking = Booking.find(params[:booking_id])
+    @booking.status = "Cancelled"
+    @booking.save!
+    redirect_back fallback_location: root_path
+  end
+
   private
 
   def booking_params
