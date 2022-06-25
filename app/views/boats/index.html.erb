@@ -1,6 +1,11 @@
 <div class="container">
   <div class="d-flex justify-content-between pt-5">
     <h1>Browse boats</h1>
+     <%= form_with url: "/boats", method: :get do |f| %>
+    <%= f.text_field :query %>
+    <%= f.submit "Search", class: "btn btn-primary"%>
+    <%= link_to "Reset", boats_path, class: "btn btn-secondary" %>
+  <% end %>
   </div>
   <hr>
   <div class="cards">
