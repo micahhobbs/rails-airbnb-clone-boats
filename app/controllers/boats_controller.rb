@@ -1,6 +1,7 @@
 class BoatsController < ApplicationController
   def index
-    @boats = Boat.all
+    # Browse page shows all boats except for user's boats
+    @boats = Boat.where("user_id != ?", current_user.id)
   end
 
   def show
