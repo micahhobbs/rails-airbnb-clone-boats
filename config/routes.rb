@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get '/bookings_on_my_boats', to: 'bookings#bookings_on_my_boats', as: 'bookings_on_my_boats'
   post '/bookings_on_my_boats/approve', to: 'bookings#approve', as: 'booking_approve'
   post '/bookings_on_my_boats/reject', to: 'bookings#reject', as: 'booking_reject'
+  post '/bookings_on_my_boats/cancel', to: 'bookings#cancel', as: 'booking_cancel'
 end

@@ -10,6 +10,9 @@
           <p>Start Date <%= booking.start_date %></p>
           <p>End Date <%= booking.end_date %></p>
           <p><%= booking.status %></p>
+          <% if booking.status != 'Completed' && booking.status != 'Cancelled' %>
+          <%=link_to "Cancel", booking_cancel_path(booking_id: booking.id), class: 'btn btn-danger', method: :post %>
+          <% end %>
         </div>
       </div>
     <% end %>

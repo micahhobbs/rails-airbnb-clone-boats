@@ -18,6 +18,7 @@
           <%=link_to "Reject", booking_reject_path(booking_id: booking.id), class: 'btn btn-danger', method: :post %>
           <% elsif booking.status == "Rejected"%>
           <%=link_to "Approve", booking_approve_path(booking_id: booking.id), class: 'btn btn-success', method: :post %>
+          <% else %>
           <% end %>
         </div>
       </div>
