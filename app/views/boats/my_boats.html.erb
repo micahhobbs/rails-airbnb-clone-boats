@@ -7,11 +7,15 @@
   <div class="cards">
     <% @boats.each do |boat| %>
       <div class="card-product">
+        <% if boat.photo.key %>
+        <div><%= cl_image_tag boat.photo.key, height: 400, width: 500, crop: :fill %></div>
+        <% else %>
         <%= image_tag("boat.jpg") %>
+        <%end%>
         <div class="card-product-infos">
           <%= link_to boat.name, boat_path(boat.id)%>
           <p><%= boat.description %></p>
-          <p><%= boat.price %></p>
+          <p><%= boat.price %>/day</p>
         </div>
       </div>
     <% end %>
