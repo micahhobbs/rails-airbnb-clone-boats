@@ -3,6 +3,7 @@
     <%= simple_form_for(@boat) do |f| %>
       <%= f.input :name %>
       <%= f.input :description %>
+      <%= f.input :photo, as: :file %>
       <%= f.input :category %>
       <%= f.input :price %>
       <div class="text-center">

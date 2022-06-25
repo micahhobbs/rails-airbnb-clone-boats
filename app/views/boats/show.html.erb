@@ -6,7 +6,7 @@
 </div>
 <div class="container pt-4 bg-white">
   <h1><%= @boat.name %></h1>
-    <div><p>Image</p></div>
+    <div><%= cl_image_tag @boat.photo.key, height: 400, width: 500, crop: :fill %></div>
   <div>
     <h3>Boat hosted by <%= @boat.user.email %></h3>
     <p><strong>Type: <%= @boat.category %></strong></p>
