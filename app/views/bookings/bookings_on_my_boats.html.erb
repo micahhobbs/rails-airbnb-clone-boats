@@ -8,9 +8,10 @@
         <div class="card-product-infos">
           <h2><%= booking.boat.name %></h2>
           <p>Booked By: <%= booking.user.email %></p>
-          <p>Start Date <%= booking.start_date %></p>
-          <p>End Date <%= booking.end_date %></p>
-          <p><%= booking.status %></p>
+          <p>Start Date <%= booking.start_date.strftime("%F") %></p>
+          <p>End Date <%= booking.end_date.strftime("%F") %></p>
+          <p><strong><%= booking.status %></strong></p>
+          <p><%= number_to_currency(booking.boat.price, unit: "$", precision: 0)%>/day</p>
           <h5><%= number_to_currency(booking.total_cost, unit: "$", precision: 0) %></h5>
           <% if booking.status == "Pending"%>
           <%=link_to "Approve", booking_approve_path(booking_id: booking.id), class: 'btn btn-success', method: :post %>
