@@ -11,6 +11,7 @@
           <p>Start Date <%= booking.start_date %></p>
           <p>End Date <%= booking.end_date %></p>
           <p><%= booking.status %></p>
+          <h5><%= number_to_currency(booking.total_cost, unit: "$", precision: 0) %></h5>
           <% if booking.status == "Pending"%>
           <%=link_to "Approve", booking_approve_path(booking_id: booking.id), class: 'btn btn-success', method: :post %>
           <%=link_to "Reject", booking_reject_path(booking_id: booking.id), class: 'btn btn-danger', method: :post %>
