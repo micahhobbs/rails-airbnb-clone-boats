@@ -1,10 +1,4 @@
-<div class="container pt-4">
-  <h2>Add a new boat</h2>
-  <%= simple_form_for(@boat) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :category %>
-    <%= f.input :price %>
-    <%= f.submit class: "btn btn-primary"%>
-  <% end %>
+<div>
+  <h2 class="text-center pt-3 pb-1"><strong>Add a new boat</strong></h2>
 </div>
+<%= render partial: 'shared/form', boat: @boat %>
