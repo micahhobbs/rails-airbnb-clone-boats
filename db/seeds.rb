@@ -44,7 +44,7 @@ boat_1 = Boat.create!(
 boat_2 = Boat.create!(
   name: "Dragon Boat",
   category: "Battleship",
-  description: "Khaleesi's favorite",
+  description: "It breathes fire",
   price: 140,
   user_id: 1
 )
