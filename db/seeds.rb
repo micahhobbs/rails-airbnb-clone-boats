@@ -36,7 +36,7 @@ user_3 = User.create!(
 boat_1 = Boat.create!(
   name: "Surly Sally",
   category: "Pontoon",
-  description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, possimus quas at excepturi cum earum nisi ipsam similique totam omnis.",
+  description: "Just a trusty boat",
   price: 120,
   user_id: 1
 )
@@ -44,7 +44,7 @@ boat_1 = Boat.create!(
 boat_2 = Boat.create!(
   name: "Dragon Boat",
   category: "Battleship",
-  description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, possimus quas at excepturi cum earum nisi ipsam similique totam omnis.",
+  description: "Khaleesi's favorite",
   price: 140,
   user_id: 1
 )
@@ -52,7 +52,7 @@ boat_2 = Boat.create!(
 boat_3 = Boat.create!(
   name: "Fast Boat",
   category: "Speedboat",
-  description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, possimus quas at excepturi cum earum nisi ipsam similique totam omnis.",
+  description: "Like the Flash",
   price: 340,
   user_id: 2
 )
@@ -60,7 +60,7 @@ boat_3 = Boat.create!(
 boat_4 = Boat.create!(
   name: "Slow Boat",
   category: "Dingy",
-  description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, possimus quas at excepturi cum earum nisi ipsam similique totam omnis.",
+  description: "Take your time and enjoy life.",
   price: 100,
   user_id: 2
 )
