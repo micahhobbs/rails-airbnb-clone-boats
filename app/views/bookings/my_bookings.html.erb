@@ -1,7 +1,7 @@
 <div class="container">
     <%= render partial: 'shared/tabbar', :locals => {my_boats: "", my_bookings: "active", bookings_on_my_boats: ""} %>
   <hr>
-  <div class="cards">
+  <div class="cards pb-5">
     <% @my_bookings.each do |booking| %>
       <div class="card-product">
         <%# <%= image_tag("boat") %>

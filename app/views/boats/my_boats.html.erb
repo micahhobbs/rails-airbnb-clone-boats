@@ -1,6 +1,6 @@
 <div class="container">
     <%= render partial: 'shared/tabbar', :locals => {my_boats: "active", my_bookings: "", bookings_on_my_boats: ""} %>
-  <div class="d-flex justify-content-between pt-5">
+  <div class="d-flex flex-row-reverse pt-1">
     <%= link_to "Add a new boat", new_boat_path, class: "btn btn-primary" %>
   </div>
   <hr>
