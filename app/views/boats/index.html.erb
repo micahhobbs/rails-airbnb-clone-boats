@@ -9,24 +9,6 @@
       <% end %>
     </div>
     <hr>
-    <div class="cards">
-      <% @boats.each do |boat| %>
-        <div class="card-product">
-          <% if boat.photo.key %>
-            <div><%= cl_image_tag boat.photo.key, height: 400, width: 500, crop: :fill %></div>
-          <% else %>
-            <%= image_tag("boat.jpg") %>
-          <%end%>
-          <div class="card-product-infos">
-            <h2><%= boat.name %></h2>
-            <p><%= boat.description %></p>
-            <div class="d-flex justify-content-between pt-3">
-              <p>$<%= boat.price %>/day</p>
-              <%= link_to "Details", boat_path(boat), class: "btn btn-outline-danger" %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
+    <%= render "shared/boat_card" %>
   </div>
 </div>
