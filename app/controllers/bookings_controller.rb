@@ -25,7 +25,10 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to my_bookings_path
     else
-      redirect_to boats_path
+      @booking.errors.each do |_, message|
+        flash.alert = message
+      end
+      redirect_back fallback_location: '/'
     end
   end
 
