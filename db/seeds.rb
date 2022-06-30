@@ -180,48 +180,48 @@ boat_12 = Boat.create!(
 boat_12.photo.attach(io: boat_12_file, filename: 'sailingboat.jpg', content_type: 'image/jpg')
 
 booking_1 = Booking.create!(
-  start_date: Date.new(2022,2,3),
-  end_date: Date.new(2022,3,1),
+  start_date: Date.new(2022,7,1),
+  end_date: Date.new(2022,7,3),
   status: "Pending",
   boat_id: 3,
   user_id: 1,
 )
 
 booking_2 = Booking.create!(
-  start_date: Date.new(2022,3,1),
-  end_date: Date.new(2022,3,3),
+  start_date: Date.new(2022,7,1),
+  end_date: Date.new(2022,7,3),
   status: "Pending",
   boat_id: 5,
   user_id: 1,
 )
 
 booking_3 = Booking.create!(
-  start_date: Date.new(2022,3,12),
-  end_date: Date.new(2022,3,23),
+  start_date: Date.new(2022,7,12),
+  end_date: Date.new(2022,7,23),
   status: "Pending",
   boat_id: 3,
   user_id: 3,
 )
 
 booking_4 = Booking.create!(
-  start_date: Date.new(2022,3,13),
-  end_date: Date.new(2022,3,15),
+  start_date: Date.new(2022,7,13),
+  end_date: Date.new(2022,7,15),
   status: "Pending",
   boat_id: 1,
   user_id: 2,
 )
 
 booking_5 = Booking.create!(
-  start_date: Date.new(2022,3,1),
-  end_date: Date.new(2022,3,16),
+  start_date: Date.new(2022,7,1),
+  end_date: Date.new(2022,7,16),
   status: "Pending",
   boat_id: 6,
   user_id: 3,
 )
 
 booking_6 = Booking.create!(
-  start_date: Date.new(2022,3,1),
-  end_date: Date.new(2022,3,3),
+  start_date: Date.new(2022,7,1),
+  end_date: Date.new(2022,7,3),
   status: "Pending",
   boat_id: 2,
   user_id: 2,
