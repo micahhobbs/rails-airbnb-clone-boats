@@ -4,7 +4,7 @@
       <h1>Browse Boats</h1>
       <%= form_with url: "/boats", method: :get do |f| %>
         <%= f.text_field :query, style: "height: 36.2px; width: 300px; padding: 6px 12px;" %>
-        <%= f.submit "Search", class: "btn btn-danger text-white", style: "background-color: rgba(222, 69, 51, 1); border-radius: 5px"%>
+        <%= f.submit "Search", class: "btn btn-primary"%>
         <%= link_to "Reset", boats_path, class: "btn btn-secondary", style: "border-radius: 5px"%>
       <% end %>
     </div>
