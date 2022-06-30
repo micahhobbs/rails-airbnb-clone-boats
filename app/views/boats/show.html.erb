@@ -48,3 +48,17 @@
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-5 container mt-3 pt-4 mb-3 pb-3 bg-white">
+    <% if @boat.reviews.present? %>
+      <% @boat.reviews.each do |review|  %>
+        <p><strong><%= review.user.email %></strong></p>
+        <p>Rating: <%= review.rating %></p>
+        <p>Comment: <%= review.comment %></p>
+    <% end %>
+    <% else  %>
+      <p>There are no reviews for this boat.</p>
+    <% end %>
+  </div>
+</div>

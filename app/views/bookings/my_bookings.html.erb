@@ -16,7 +16,10 @@
           <p><%= number_to_currency(booking.boat.price, unit: "$", precision: 0)%>/day</p>
           <h5><%= number_to_currency(booking.total_cost, unit: "$", precision: 0) %></h5>
           <% if booking.status != 'Completed' && booking.status != 'Cancelled' %>
-          <%=link_to "Cancel", booking_cancel_path(booking_id: booking.id), class: 'btn btn-danger', method: :post %>
+            <%=link_to "Cancel", booking_cancel_path(booking_id: booking.id), class: 'btn btn-danger', method: :post %>
+          <% end %>
+          <% if booking.status == 'Completed' %>
+            <%= link_to 'Review', new_boat_review_path(booking.boat_id), class: 'btn btn-primary' %>
           <% end %>
         </div>
       </div>
