@@ -222,9 +222,37 @@ booking_5 = Booking.create!(
 booking_6 = Booking.create!(
   start_date: Date.new(2022,7,1),
   end_date: Date.new(2022,7,3),
-  status: "Pending",
+  status: "Completed",
   boat_id: 2,
   user_id: 2,
+)
+
+review_1 = Review.create!(
+  rating: 1,
+  comment: "Not the best...",
+  user_id: 3,
+  boat_id: 1
+)
+
+review_2 = Review.create!(
+  rating: 3,
+  comment: "It was ok I guess.",
+  user_id: 3,
+  boat_id: 5
+)
+
+review_3 = Review.create!(
+  rating: 1,
+  comment: "Meh.",
+  user_id: 1,
+  boat_id: 4
+)
+
+review_4 = Review.create!(
+  rating: 5,
+  comment: "Wow, that was the best boat ride ever.",
+  user_id: 1,
+  boat_id: 6
 )
 
 puts "SEED COMPLETE"
