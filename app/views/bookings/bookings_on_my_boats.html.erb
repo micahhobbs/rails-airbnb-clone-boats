@@ -2,6 +2,9 @@
     <%= render partial:'shared/tabbar', :locals => {my_boats: "", my_bookings: "", bookings_on_my_boats: "active"} %>
   <hr>
   <div class="cards pb-5">
+    <% if @bookings_on_my_boats.length == 0%>
+    <h5>You have no bookings on your boats</h5>
+    <% else %>
     <% @bookings_on_my_boats.each do |booking| %>
       <div class="card-product">
         <%# <%= image_tag("boat") %>
@@ -25,5 +28,8 @@
         </div>
       </div>
     <% end %>
+    <% end %>
   </div>
+  <h2>Calendar</h2>
+  <%= render partial: 'shared/calendar', :locals => {bookings: @bookings_on_my_boats} %>
 </div>

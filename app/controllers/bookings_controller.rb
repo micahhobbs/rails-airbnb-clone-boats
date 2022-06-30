@@ -50,6 +50,9 @@ class BookingsController < ApplicationController
     redirect_back fallback_location: root_path
   end
 
+  def calendar
+  end
+
   private
 
   def booking_params

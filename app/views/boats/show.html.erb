@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="col-2 bg-white px-4 py-4 h-25 d-inline-block d-flex justify-content-center", style="border-radius: 5px;">
-  <div class="d-flex justify-content-baseline">
+  <div class="d-flex justify-content-baseline row">
   <% if current_user.id != @boat.user_id %>
     <%= simple_form_for [@boat, @booking], url: boat_bookings_path(@boat) do |f| %>
       <h5><strong>$<%= @boat.price %>/day</strong></h5>
@@ -40,5 +40,9 @@
   <% end %>
   </div>
   </div>
+       <div class='d-block'>
+      <h2> Availability </h2>
+      <%= render partial: 'shared/calendar', :locals => {bookings: @boat.bookings} %>
+    </div>
   </div>
 </div>

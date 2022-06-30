@@ -1,0 +1,9 @@
+<%= month_calendar(events: bookings, attribute: :start_date, end_attribute: :end_date) do |date, meetings| %>
+  <%= date %>
+
+  <% meetings.each do |meeting| %>
+    <div class="meeting bg-success">
+      <p><%= meeting.boat.name %></p>
+    </div>
+  <% end %>
+<% end %>
