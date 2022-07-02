@@ -26,4 +26,6 @@ class Boat < ApplicationRecord
 
     return results
   end
+
+
 end

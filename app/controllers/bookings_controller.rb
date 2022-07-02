@@ -3,10 +3,12 @@ require 'date'
 
 class BookingsController < ApplicationController
   def my_bookings
+    Booking.completed_or_expired
     @my_bookings = Booking.all.select { |booking| booking.user_id == current_user.id }
   end
 
   def bookings_on_my_boats
+    Booking.completed_or_expired
     my_boat_ids = current_user.boats.map {|boat| boat.id }
     @bookings_on_my_boats = Booking.all.select { |booking| my_boat_ids.include? booking.boat_id }
   end
