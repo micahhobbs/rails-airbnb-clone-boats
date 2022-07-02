@@ -1,17 +1,21 @@
 .simple-calendar {
-  table {
-    min-height: 80vh;
+  .table {
+    table-layout: fixed;
   }
+
   .today {
     background-color: #FAF3DD;
+  }
+  .day {
+   height: 50px;
   }
 }
 
 .meeting {
   color: white;
-  padding: 8px 24px;
+  // padding: 8px 8px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: #5b605e;
   transition: background 0.3s ease;
 }
 
