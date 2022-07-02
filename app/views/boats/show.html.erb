@@ -2,9 +2,9 @@
 <%= link_to 'Back to Results', :back %>
   <div class='row pt-4'>
     <div class='col-7'>
-    <div class="bg-white card", style="border-radius: 5px;">
-      <h1 class="py-2 text-center"><%= @boat.name %></h1>
-      <div class="d-flex justify-content-center p-3">
+    <div class="bg-white card" style="border-radius: 5px;">
+      <h1 class="p-3 pb-0"><%= @boat.name %></h1>
+      <div class="d-flex justify-content-center p-3 pt-0">
       <% if @boat.photo.key %>
         <%= cl_image_tag @boat.photo.key, crop: :fill, class: 'boat-photo' %>
       <% else %>
@@ -19,16 +19,19 @@
   </div>
 
   <div class="p-3 bg-white mt-3 mb-3 card">
+    <h3>Reviews</h3>
     <% if @boat.reviews.present? %>
+    <div class="bg-light mb-2">
       <% @boat.reviews.each do |review|  %>
-        <p><strong><%= review.user.email %></strong></p>
-        <p>Rating: <%= review.rating %></p>
-        <p>Comment: <%= review.comment %></p>
-    <% end %>
-    <% else  %>
+        <p class="mb-1"><strong>Reviewer:</strong> <%= current_user.email.split("@")[0].capitalize %></p>
+        <p class="mb-1"><strong>Rating:</strong> <%= "⭐️" * review.rating.to_i %></p>
+        <p class="mb-1"><strong>Comment:</strong> <%= review.comment %></p>
+      <% end %>
+    <% else %>
       <p>There are no reviews for this boat.</p>
     <% end %>
-</div>
+    </div>
+  </div>
 
   </div>
   <div class='col-5'>
