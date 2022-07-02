@@ -3,9 +3,9 @@ class BoatsController < ApplicationController
     # Browse page shows all boats except for user's boats
     # @boats = Boat.where("user_id != ?", current_user.id)
     if params.key?(:query)
-      @boats = Boat.search(params[:query], current_user.id)
+      @boats = Boat.search(params[:query], params[:start_date], params[:end_date], current_user.id)
     else
-      @boats = Boat.search(nil, current_user.id)
+      @boats = Boat.search(nil, "", "", current_user.id)
     end
   end
 
@@ -58,6 +58,6 @@ class BoatsController < ApplicationController
   end
 
   def search_params
-    params.permit(:query)
+    params.permit(:query, :start_date, :end_date)
   end
 end
