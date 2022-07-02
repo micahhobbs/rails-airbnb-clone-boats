@@ -180,24 +180,24 @@ boat_12 = Boat.create!(
 boat_12.photo.attach(io: boat_12_file, filename: 'sailingboat.jpg', content_type: 'image/jpg')
 
 booking_1 = Booking.create!(
-  start_date: Date.new(2022,7,1),
-  end_date: Date.new(2022,7,3),
+  start_date: Date.new(2022,7,10),
+  end_date: Date.new(2022,7,13),
   status: "Pending",
   boat_id: 3,
   user_id: 1,
 )
 
 booking_2 = Booking.create!(
-  start_date: Date.new(2022,7,1),
-  end_date: Date.new(2022,7,3),
+  start_date: Date.new(2022,7,8),
+  end_date: Date.new(2022,7,10),
   status: "Pending",
   boat_id: 5,
   user_id: 1,
 )
 
 booking_3 = Booking.create!(
-  start_date: Date.new(2022,7,12),
-  end_date: Date.new(2022,7,23),
+  start_date: Date.new(2022,7,14),
+  end_date: Date.new(2022,7,19),
   status: "Pending",
   boat_id: 3,
   user_id: 3,
@@ -212,7 +212,7 @@ booking_4 = Booking.create!(
 )
 
 booking_5 = Booking.create!(
-  start_date: Date.new(2022,7,1),
+  start_date: Date.new(2022,7,13),
   end_date: Date.new(2022,7,16),
   status: "Pending",
   boat_id: 6,
@@ -220,8 +220,8 @@ booking_5 = Booking.create!(
 )
 
 booking_6 = Booking.create!(
-  start_date: Date.new(2022,7,1),
-  end_date: Date.new(2022,7,3),
+  start_date: Date.new(2022,7,21),
+  end_date: Date.new(2022,7,24),
   status: "Completed",
   boat_id: 2,
   user_id: 2,
@@ -253,6 +253,20 @@ review_4 = Review.create!(
   comment: "Wow, that was the best boat ride ever.",
   user_id: 1,
   boat_id: 6
+)
+
+review_5 = Review.create!(
+  rating: 5,
+  comment: "Seriously, the best fishing boat you can get!",
+  user_id: 3,
+  boat_id: 1
+)
+
+review_6 = Review.create!(
+  rating: 5,
+  comment: "Rent this fishing boat now. You won't regret it!",
+  user_id: 2,
+  boat_id: 1
 )
 
 puts "SEED COMPLETE"
