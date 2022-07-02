@@ -2,8 +2,10 @@ class BoatsController < ApplicationController
   def index
     # Browse page shows all boats except for user's boats
     # @boats = Boat.where("user_id != ?", current_user.id)
+    @prev_search = {query: "", start_date: "", end_date: ""}
     if params.key?(:query)
       @boats = Boat.search(params[:query], params[:start_date], params[:end_date], current_user.id)
+      @prev_search = params
     else
       @boats = Boat.search(nil, "", "", current_user.id)
     end
