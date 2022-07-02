@@ -9,7 +9,7 @@
       <div class="card-product <%=booking.status.downcase%>">
         <%# <%= image_tag("boat") %>
         <div class="card-product-infos">
-          <h2><%= booking.boat.name %></h2>
+          <h2><%= link_to booking.boat.name, boat_path(booking.boat) %></h2>
           <p>Start Date <%= booking.start_date.strftime("%F") %></p>
           <p>End Date <%= booking.end_date.strftime("%F") %></p>
           <p><strong><%= booking.status %></strong></p>
