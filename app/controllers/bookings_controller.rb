@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
     @booking.status = "Pending"
     if @booking.save
       redirect_to boat_path(params[:boat_id])
-      flash.notice = "Booking Successful!"
+      flash.notice = "Booking Successful! Total Cost: $#{@booking.total_cost}"
     else
       @booking.errors.each do |_, message|
         flash.alert = message
