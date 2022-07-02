@@ -8,7 +8,7 @@
         <div class=" d-flex justify-content-center"><%= image_tag("boat.jpg") %></div>
       <%end%>
     <div>
-      <h3 class="pt-4 pb-2">Boat hosted by <%= @boat.user.email %></h3>
+      <h3 class="pt-4 pb-2">Boat hosted by <%= @boat.user.email.split("@")[0].capitalize %></h3>
       <p><strong>Type: <%= @boat.category %></strong></p>
       <p><%= @boat.description %></p>
     </div>
