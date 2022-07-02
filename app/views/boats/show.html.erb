@@ -1,4 +1,5 @@
 <div class="container">
+<%= link_to 'Back to browse boats', boats_path, class: "btn btn-primary mt-3"  %>
   <div class='row pt-4'>
     <div class='col-7'>
     <div class="bg-white card" style="border-radius: 5px;">
@@ -17,25 +18,12 @@
     </div>
   </div>
 
-  <div class="p-3 bg-white mt-3 mb-3 card">
-    <h3>Reviews</h3>
-    <% if @boat.reviews.present? %>
-    <div class="bg-light mb-2">
-      <% @boat.reviews.each do |review|  %>
-        <p class="mb-1"><strong>Reviewer:</strong> <%= current_user.email.split("@")[0].capitalize %></p>
-        <p class="mb-1"><strong>Rating:</strong> <%= "⭐️" * review.rating.to_i %></p>
-        <p class="mb-1"><strong>Comment:</strong> <%= review.comment %></p>
-      <% end %>
-    <% else %>
-      <p>There are no reviews for this boat.</p>
-    <% end %>
-    </div>
-  </div>
 
   </div>
   <div class='col-5'>
   <div class="bg-white d-flex justify-content-center p-3 card", style="border-radius: 5px;">
     <div class="d-flex justify-content-baseline row">
+      <h3>Availablity</h3>
       <%= render partial: 'shared/calendar', :locals => {bookings: @boat.bookings} %>
     <% if current_user.id != @boat.user_id %>
     <%= simple_form_for [@boat, @booking], url: boat_bookings_path(@boat) do |f| %>
@@ -65,5 +53,19 @@
   </div>
   </div>
   </div>
+  </div>
+  <div class="p-3 bg-white mt-3 mb-3 card">
+    <h3>Reviews</h3>
+    <% if @boat.reviews.present? %>
+    <div class="bg-light mb-2">
+      <% @boat.reviews.each do |review|  %>
+        <p class="mb-1"><strong>Reviewer:</strong> <%= current_user.email.split("@")[0].capitalize %></p>
+        <p class="mb-1"><strong>Rating:</strong> <%= "⭐️" * review.rating.to_i %></p>
+        <p class="mb-1"><strong>Comment:</strong> <%= review.comment %></p>
+      <% end %>
+    <% else %>
+      <p>There are no reviews for this boat.</p>
+    <% end %>
+    </div>
   </div>
 </div>
