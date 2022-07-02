@@ -23,7 +23,8 @@ class BookingsController < ApplicationController
     @booking.end_date = Date.parse booking_params[:end_date]
     @booking.status = "Pending"
     if @booking.save
-      redirect_to my_bookings_path
+      redirect_to boat_path(params[:boat_id])
+      flash.notice = "Booking Successful!"
     else
       @booking.errors.each do |_, message|
         flash.alert = message

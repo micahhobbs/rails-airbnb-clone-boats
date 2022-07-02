@@ -4,10 +4,10 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :boat
   validates :start_date, :end_date, :status, presence: true
-  validate :overlap_dates, :past_date, :valid_range
+  validate :overlap_dates, :past_date, :valid_range, on: :create
 
   def total_cost
-    num_days = ((end_date - start_date).to_i / 86400) + 1
+    num_days = (end_date - start_date).to_i / 86400
     num_days * boat.price
   end
 
