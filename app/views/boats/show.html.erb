@@ -60,7 +60,7 @@
     <div class="bg-light mb-2">
       <% @boat.reviews.each do |review|  %>
       <div class = 'card p-3 mb-1'>
-        <p class="mb-1"><strong>Reviewer:</strong> <%= current_user.email.split("@")[0].capitalize %></p>
+        <p class="mb-1"><strong>Reviewer:</strong> <%= review.user.email.split("@")[0].capitalize %></p>
         <p class="mb-1"><strong>Rating:</strong> <%= "⭐️" * review.rating.to_i %></p>
         <p class="mb-1"><strong>Comment:</strong> <%= review.comment %></p>
       </div>
