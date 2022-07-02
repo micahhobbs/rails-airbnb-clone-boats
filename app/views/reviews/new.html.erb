@@ -1,11 +1,18 @@
 <div class="row">
   <div class="col-5 container mt-3 pt-4 mb-3 pb-3 bg-white">
-    <%= simple_form_for([@boat, @review]) do |f| %>
+  <h1 class="mb-3">Leave a review for: <%= @boat.name %></h1>
+  <p>Please leave a rating and a comment about your experience with this boat:</p>
+  <%= simple_form_for([@boat, @review]) do |f| %>
+    <div class="mb-2">
+      <%= f.label :rating %>
       <%= f.select :rating, options_for_select([1, 2, 3, 4, 5]) %>
+    </div>
+    <div class="mb-3">
       <%= f.input :comment, placeholder: "Enter comment" %>
-      <div class="text-center">
-        <%= f.submit class: "btn btn-primary text-white", style: "border-radius: 5px"%>
-      </div>
-    <% end %>
-</div>
+    </div>
+    <div class="text-center">
+      <%= f.submit class: "btn btn-primary text-white", style: "border-radius: 5px"%>
+    </div>
+  <% end %>
+  </div>
 </div>
